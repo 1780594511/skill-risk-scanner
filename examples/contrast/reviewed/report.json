@@ -1,0 +1,148 @@
+{
+  "config": {
+    "allowed_domain_count": 1,
+    "disabled_rules": [],
+    "exact_exception_count": 1,
+    "include_snippets": true,
+    "limits": {
+      "max_depth": 32,
+      "max_entries": 10000,
+      "max_file_bytes": 262144,
+      "max_files": 1000,
+      "max_total_bytes": 8388608
+    },
+    "reference_date": "2026-11-08",
+    "sha256": "2f9f069ef99bca2ce21796f20be290380fc758302f77682031f4058939968632",
+    "unmatched_exception_ids": []
+  },
+  "coverage": [
+    {
+      "bytes": 198,
+      "encoding": "utf-8-sig",
+      "issues": [],
+      "kind": "file",
+      "path": "review.py",
+      "reason": "",
+      "sha256": "f0383966f85cdb8370a5be664950bdfc9f75073037003940358b8ea15bebb4e5",
+      "status": "scanned",
+      "suffix": ".py"
+    }
+  ],
+  "findings": [
+    {
+      "category": "network",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 调用匹配常见网络 API；URL 为字面量，仅记录主机名，不推断请求发生",
+      "exception": {
+        "matches": [
+          {
+            "expires": "2026-12-31",
+            "id": "domain:example.invalid",
+            "kind": "domain",
+            "reason": "合成演示目标；仅对明确网络目标记录例外，不表示可执行或可读取凭据"
+          }
+        ],
+        "status": "applied"
+      },
+      "line": 3,
+      "path": "review.py",
+      "review": [
+        "目标归谁管理，是否允许重定向？",
+        "实际发送哪些字段，是否必要且获授权？"
+      ],
+      "review_required": false,
+      "rule_id": "SG001",
+      "severity": "medium",
+      "snippet": "token skeleton: requests get [all other content omitted]",
+      "target": {
+        "host": "example.invalid",
+        "status": "literal"
+      }
+    },
+    {
+      "category": "execution",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 命令调用；参数为固定字面量；未显式启用 shell；不能单独证明命令注入",
+      "exception": {
+        "matches": [
+          {
+            "expires": "2026-12-31",
+            "id": "fixed-version-check",
+            "kind": "exact",
+            "reason": "人工核对为固定 python --version 调用；权限仍需复核"
+          }
+        ],
+        "status": "applied"
+      },
+      "line": 4,
+      "path": "review.py",
+      "review": [
+        "参数来自固定值、用户输入还是网络？",
+        "是否必须使用解释器，能否限制参数与权限？单条命中不证明命令注入。"
+      ],
+      "review_required": false,
+      "rule_id": "SG003",
+      "severity": "low",
+      "snippet": "token skeleton: subprocess run [all other content omitted]",
+      "target": null
+    },
+    {
+      "category": "credential",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 读取调用直接关联常见凭据路径/默认 dotenv 文件；只检查源代码，不读取被引用路径",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 5,
+      "path": "review.py",
+      "review": [
+        "为何需要读取该凭据文件？",
+        "用途、接收方与最小权限是否已记录？扫描器不会读取所提及的文件。"
+      ],
+      "review_required": true,
+      "rule_id": "SG005",
+      "severity": "medium",
+      "snippet": "token skeleton: open read [all other content omitted]",
+      "target": null
+    }
+  ],
+  "root_name": "17_allowlist",
+  "ruleset_version": "2026.11.08-v1",
+  "runtime": {
+    "elapsed_seconds": 0.007389,
+    "started_at_utc": "2026-11-07T18:39:03.723042+00:00"
+  },
+  "scanner_version": "0.1.0",
+  "schema_version": "1",
+  "summary": {
+    "by_category": {
+      "credential": 1,
+      "execution": 1,
+      "network": 1
+    },
+    "by_rule": {
+      "SG001": 1,
+      "SG003": 1,
+      "SG005": 1
+    },
+    "bytes_read": 198,
+    "complete": true,
+    "conclusion": "需人工复核",
+    "covered_types": [
+      ".py"
+    ],
+    "directories_skipped": 0,
+    "excepted_findings": 2,
+    "files_partial": 0,
+    "files_scanned": 1,
+    "files_skipped": 0,
+    "finding_count": 3,
+    "other_entries_skipped": 0,
+    "review_findings": 1,
+    "uncovered": []
+  }
+}

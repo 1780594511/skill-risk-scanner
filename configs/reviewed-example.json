@@ -1,0 +1,10 @@
+{
+  "reference_date": "2026-11-08",
+  "allowed_domains": [
+    {"domain": "example.invalid", "reason": "合成演示目标；仅对明确网络目标记录例外，不表示可执行或可读取凭据", "expires": "2026-12-31"}
+  ],
+  "exceptions": [
+    {"id": "fixed-version-check", "rule_id": "SG003", "path": "review.py", "line": 4, "reason": "人工核对为固定 python --version 调用；权限仍需复核", "expires": "2026-12-31"}
+  ],
+  "report": {"include_snippets": true}
+}

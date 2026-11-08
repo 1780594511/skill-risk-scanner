@@ -1,0 +1,4 @@
+{
+  "docs": "https://example.invalid/help?token=FAKE_CONFIG_TOKEN_DO_NOT_USE",
+  "credential_path": ".ssh/id_rsa"
+}

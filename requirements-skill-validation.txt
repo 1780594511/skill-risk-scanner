@@ -1,0 +1,2 @@
+# Only needed by the host's quick_validate.py, not by skill_guard.
+PyYAML==6.0.3

@@ -1,0 +1,2 @@
+# Scanner runtime has NO third-party dependencies.
+pytest==9.2.0

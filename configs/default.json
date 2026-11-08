@@ -1,0 +1,8 @@
+{
+  "reference_date": "2026-11-08",
+  "limits": {"max_file_bytes": 262144, "max_files": 1000, "max_total_bytes": 8388608, "max_entries": 10000, "max_depth": 32},
+  "disabled_rules": [],
+  "allowed_domains": [],
+  "exceptions": [],
+  "report": {"include_snippets": false}
+}

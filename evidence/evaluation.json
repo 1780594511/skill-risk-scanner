@@ -1,0 +1,361 @@
+{
+  "benchmark": "handwritten synthetic functional fixtures; NOT real-world malware detection rates",
+  "by_rule": {
+    "SG001": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 6
+    },
+    "SG002": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 6
+    },
+    "SG003": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 10
+    },
+    "SG004": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 5
+    },
+    "SG005": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 4
+    },
+    "SG006": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 3
+    },
+    "SG007": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 7
+    },
+    "SG008": {
+      "fn": 0,
+      "fp": 0,
+      "tp": 1
+    }
+  },
+  "case_count": 24,
+  "cases": [
+    {
+      "case": "01_clean_docs",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "02_no_hits",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 0,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 0
+    },
+    {
+      "case": "03_python_network",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "04_aliases",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 2,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 2
+    },
+    {
+      "case": "05_fixed_command",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "06_dynamic_shell",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "07_environment",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 4,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 4
+    },
+    {
+      "case": "08_credential_read",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 2,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 2
+    },
+    {
+      "case": "09_path_document",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 2,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 2
+    },
+    {
+      "case": "10_pipeline",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 3,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 3
+    },
+    {
+      "case": "11_download_only",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "12_execute_only",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "13_independent_steps",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 2,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 2
+    },
+    {
+      "case": "14_document_code",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 4,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 4
+    },
+    {
+      "case": "15_comments",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 1,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 1
+    },
+    {
+      "case": "16_broken_python",
+      "complete": false,
+      "exceptions_match": true,
+      "expected": 0,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 0
+    },
+    {
+      "case": "17_allowlist",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 3,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 3
+    },
+    {
+      "case": "18_risky_skill",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 8,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 8
+    },
+    {
+      "case": "19_plain_config",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 3,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 3
+    },
+    {
+      "actual_error": "config",
+      "case": "20_invalid_config",
+      "expected_error": "config",
+      "passed": true
+    },
+    {
+      "case": "21_resource_limits",
+      "complete": false,
+      "exceptions_match": true,
+      "expected": 0,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 0
+    },
+    {
+      "case": "22_encoding",
+      "complete": false,
+      "exceptions_match": true,
+      "expected": 0,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 0
+    },
+    {
+      "case": "23_boundary_sentinel",
+      "complete": false,
+      "exceptions_match": true,
+      "expected": 0,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 0
+    },
+    {
+      "case": "24_unknown_target",
+      "complete": true,
+      "exceptions_match": true,
+      "expected": 2,
+      "false_negatives": [],
+      "false_positives": [],
+      "fn": 0,
+      "fp": 0,
+      "passed": true,
+      "skip_reasons_match": true,
+      "tp": 2
+    }
+  ],
+  "expected_hits": 42,
+  "fn": 0,
+  "fp": 0,
+  "passed_cases": 24,
+  "precision": 1.0,
+  "recall": 1.0,
+  "tp": 42,
+  "unit": "unique (case, rule_id, relative_path, 1-based line, context)"
+}

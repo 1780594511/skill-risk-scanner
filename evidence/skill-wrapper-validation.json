@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-07T18:20:06.384341+00:00",
+  "command": [
+    "<PYTHON>",
+    "<HOST_SKILL_CREATOR>/scripts/quick_validate.py",
+    "skills/skill-risk-review"
+  ],
+  "returncode": 0,
+  "stdout": "Skill is valid!\n",
+  "stderr": "",
+  "skill_md_sha256": "8a578a7c3ab722d692b82d0478995bb592f9346cf4424378b100871e6d376224",
+  "validation_scope": "host quick_validate format checks plus separately recorded CLI walkthrough; no model behavior certification",
+  "installed": false,
+  "automatic_discovery_verified": false,
+  "provenance": "Prior successful local validation of the identical SKILL.md; local paths normalized for publication. Result and content hash unchanged."
+}

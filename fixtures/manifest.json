@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "provenance": "Expectations handwritten before scanner execution; never inferred from scanner results.",
+  "unit": "rule_id/path/line/context per case",
+  "cases": [
+    {
+      "id": "01_clean_docs",
+      "expected": [
+        {
+          "rule_id": "SG007",
+          "path": "SKILL.md",
+          "line": 3,
+          "context": "document"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "02_no_hits",
+      "expected": [],
+      "complete": true
+    },
+    {
+      "id": "03_python_network",
+      "expected": [
+        {
+          "rule_id": "SG001",
+          "path": "send.py",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "04_aliases",
+      "expected": [
+        {
+          "rule_id": "SG001",
+          "path": "check.py",
+          "line": 3,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG001",
+          "path": "check.py",
+          "line": 4,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "05_fixed_command",
+      "expected": [
+        {
+          "rule_id": "SG003",
+          "path": "run.py",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "06_dynamic_shell",
+      "expected": [
+        {
+          "rule_id": "SG003",
+          "path": "run.py",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "07_environment",
+      "expected": [
+        {
+          "rule_id": "SG004",
+          "path": "reads.py",
+          "line": 2,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG004",
+          "path": "reads.py",
+          "line": 3,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG004",
+          "path": "env.sh",
+          "line": 1,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG004",
+          "path": "env.ps1",
+          "line": 1,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "08_credential_read",
+      "expected": [
+        {
+          "rule_id": "SG005",
+          "path": "read.py",
+          "line": 2,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG005",
+          "path": "read.py",
+          "line": 3,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "09_path_document",
+      "expected": [
+        {
+          "rule_id": "SG007",
+          "path": "SKILL.md",
+          "line": 2,
+          "context": "document"
+        },
+        {
+          "rule_id": "SG007",
+          "path": "SKILL.md",
+          "line": 3,
+          "context": "document"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "10_pipeline",
+      "expected": [
+        {
+          "rule_id": "SG002",
+          "path": "install.sh",
+          "line": 2,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "install.sh",
+          "line": 2,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG006",
+          "path": "install.sh",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "11_download_only",
+      "expected": [
+        {
+          "rule_id": "SG002",
+          "path": "fetch.sh",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "12_execute_only",
+      "expected": [
+        {
+          "rule_id": "SG003",
+          "path": "local.ps1",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "13_independent_steps",
+      "expected": [
+        {
+          "rule_id": "SG002",
+          "path": "split.sh",
+          "line": 1,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "split.sh",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "14_document_code",
+      "expected": [
+        {
+          "rule_id": "SG001",
+          "path": "SKILL.md",
+          "line": 4,
+          "context": "document_code"
+        },
+        {
+          "rule_id": "SG002",
+          "path": "SKILL.md",
+          "line": 8,
+          "context": "document_code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "SKILL.md",
+          "line": 8,
+          "context": "document_code"
+        },
+        {
+          "rule_id": "SG006",
+          "path": "SKILL.md",
+          "line": 8,
+          "context": "document_code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "15_comments",
+      "expected": [
+        {
+          "rule_id": "SG007",
+          "path": "comments.py",
+          "line": 1,
+          "context": "comment"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "16_broken_python",
+      "expected": [],
+      "complete": false
+    },
+    {
+      "id": "17_allowlist",
+      "expected": [
+        {
+          "rule_id": "SG001",
+          "path": "review.py",
+          "line": 3,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "review.py",
+          "line": 4,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG005",
+          "path": "review.py",
+          "line": 5,
+          "context": "code"
+        }
+      ],
+      "complete": true,
+      "config": {
+        "reference_date": "2026-11-08",
+        "allowed_domains": [
+          {
+            "domain": "example.invalid",
+            "reason": "Synthetic approved target only",
+            "expires": "2026-12-31"
+          }
+        ],
+        "exceptions": [
+          {
+            "id": "fixed-version-check",
+            "rule_id": "SG003",
+            "path": "review.py",
+            "line": 4,
+            "reason": "Reviewed fixed version query",
+            "expires": "2026-12-31"
+          }
+        ]
+      },
+      "expected_excepted": [
+        {
+          "rule_id": "SG001",
+          "path": "review.py",
+          "line": 3,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "review.py",
+          "line": 4,
+          "context": "code"
+        }
+      ]
+    },
+    {
+      "id": "18_risky_skill",
+      "expected": [
+        {
+          "rule_id": "SG008",
+          "path": "SKILL.md",
+          "line": 2,
+          "context": "document"
+        },
+        {
+          "rule_id": "SG001",
+          "path": "risk.py",
+          "line": 4,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "risk.py",
+          "line": 5,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG004",
+          "path": "risk.py",
+          "line": 6,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG005",
+          "path": "risk.py",
+          "line": 7,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG002",
+          "path": "fetch.ps1",
+          "line": 1,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "fetch.ps1",
+          "line": 1,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG006",
+          "path": "fetch.ps1",
+          "line": 1,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "19_plain_config",
+      "expected": [
+        {
+          "rule_id": "SG007",
+          "path": "settings.json",
+          "line": 2,
+          "context": "config_text"
+        },
+        {
+          "rule_id": "SG007",
+          "path": "settings.json",
+          "line": 3,
+          "context": "config_text"
+        },
+        {
+          "rule_id": "SG007",
+          "path": "settings.yaml",
+          "line": 1,
+          "context": "config_text"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "id": "20_invalid_config",
+      "expected": [],
+      "complete": true,
+      "config": {
+        "disabled_rules": [
+          "UNKNOWN_RULE"
+        ]
+      },
+      "expected_error": "config"
+    },
+    {
+      "id": "21_resource_limits",
+      "expected": [],
+      "complete": false,
+      "config": {
+        "limits": {
+          "max_file_bytes": 32
+        }
+      },
+      "skip_reasons": [
+        "file_size_limit",
+        "excluded_directory_children_not_enumerated",
+        "unsupported_type",
+        "sensitive_file_not_read"
+      ]
+    },
+    {
+      "id": "22_encoding",
+      "expected": [],
+      "complete": false,
+      "skip_reasons": [
+        "unsupported_encoding_or_binary"
+      ]
+    },
+    {
+      "id": "23_boundary_sentinel",
+      "expected": [],
+      "complete": false,
+      "skip_reasons": [
+        "excluded_directory_children_not_enumerated"
+      ]
+    },
+    {
+      "id": "24_unknown_target",
+      "expected": [
+        {
+          "rule_id": "SG002",
+          "path": "net.ps1",
+          "line": 1,
+          "context": "code"
+        },
+        {
+          "rule_id": "SG003",
+          "path": "net.ps1",
+          "line": 2,
+          "context": "code"
+        }
+      ],
+      "complete": true
+    }
+  ]
+}

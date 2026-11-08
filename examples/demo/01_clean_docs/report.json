@@ -1,0 +1,84 @@
+{
+  "config": {
+    "allowed_domain_count": 0,
+    "disabled_rules": [],
+    "exact_exception_count": 0,
+    "include_snippets": false,
+    "limits": {
+      "max_depth": 32,
+      "max_entries": 10000,
+      "max_file_bytes": 262144,
+      "max_files": 1000,
+      "max_total_bytes": 8388608
+    },
+    "reference_date": "2026-11-08",
+    "sha256": "205cc83bbf91ce9d6d3fdb37fe7eb554b13513f36fe15055d02f4a7f34f6bfd6",
+    "unmatched_exception_ids": []
+  },
+  "coverage": [
+    {
+      "bytes": 104,
+      "encoding": "utf-8-sig",
+      "issues": [],
+      "kind": "file",
+      "path": "SKILL.md",
+      "reason": "",
+      "sha256": "e64ce2d3e0941829e8f993b93e8463c72f6a5a848784d1825d1b57b53e12d9df",
+      "status": "scanned",
+      "suffix": ".md"
+    }
+  ],
+  "findings": [
+    {
+      "category": "reference",
+      "confidence": "high",
+      "context": "document",
+      "evidence": "文档、注释或纯文本配置中的 URL / 凭据路径提及",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 3,
+      "path": "SKILL.md",
+      "review": [
+        "仅为说明性线索；结合可执行上下文确认用途，不能据此判断外联或读取发生。"
+      ],
+      "review_required": false,
+      "rule_id": "SG007",
+      "severity": "info",
+      "snippet": null,
+      "target": null
+    }
+  ],
+  "root_name": "01_clean_docs",
+  "ruleset_version": "2026.11.08-v1",
+  "runtime": {
+    "elapsed_seconds": 0.006773,
+    "started_at_utc": "2026-11-07T18:39:03.008589+00:00"
+  },
+  "scanner_version": "0.1.0",
+  "schema_version": "1",
+  "summary": {
+    "by_category": {
+      "reference": 1
+    },
+    "by_rule": {
+      "SG007": 1
+    },
+    "bytes_read": 104,
+    "complete": true,
+    "conclusion": "仅信息性线索或已有记录的例外",
+    "covered_types": [
+      ".md"
+    ],
+    "directories_skipped": 0,
+    "excepted_findings": 0,
+    "files_partial": 0,
+    "files_scanned": 1,
+    "files_skipped": 0,
+    "finding_count": 1,
+    "other_entries_skipped": 0,
+    "review_findings": 0,
+    "uncovered": []
+  }
+}

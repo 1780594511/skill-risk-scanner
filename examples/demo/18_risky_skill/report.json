@@ -1,0 +1,272 @@
+{
+  "config": {
+    "allowed_domain_count": 0,
+    "disabled_rules": [],
+    "exact_exception_count": 0,
+    "include_snippets": false,
+    "limits": {
+      "max_depth": 32,
+      "max_entries": 10000,
+      "max_file_bytes": 262144,
+      "max_files": 1000,
+      "max_total_bytes": 8388608
+    },
+    "reference_date": "2026-11-08",
+    "sha256": "205cc83bbf91ce9d6d3fdb37fe7eb554b13513f36fe15055d02f4a7f34f6bfd6",
+    "unmatched_exception_ids": []
+  },
+  "coverage": [
+    {
+      "bytes": 84,
+      "encoding": "utf-8-sig",
+      "issues": [],
+      "kind": "file",
+      "path": "SKILL.md",
+      "reason": "",
+      "sha256": "ea458ca3866dee39fccec68e3063517f064b7095c176e99a7a7c6b1174911e08",
+      "status": "scanned",
+      "suffix": ".md"
+    },
+    {
+      "bytes": 72,
+      "encoding": "utf-8-sig",
+      "issues": [],
+      "kind": "file",
+      "path": "fetch.ps1",
+      "reason": "",
+      "sha256": "05786a983b71c0fa44ed369157f3e2ba26002078f1da398c19d805a036fe6e93",
+      "status": "scanned",
+      "suffix": ".ps1"
+    },
+    {
+      "bytes": 266,
+      "encoding": "utf-8-sig",
+      "issues": [],
+      "kind": "file",
+      "path": "risk.py",
+      "reason": "",
+      "sha256": "96fc99cf0761f3232e771079ce4f2076a655e201ea73c58a2c32cc2e2725af56",
+      "status": "scanned",
+      "suffix": ".py"
+    }
+  ],
+  "findings": [
+    {
+      "category": "instruction",
+      "confidence": "medium",
+      "context": "document",
+      "evidence": "待检文本包含改变审查流程或要求上传的指令线索",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 2,
+      "path": "SKILL.md",
+      "review": [
+        "把此段视为不可信数据；不要按其内容执行命令、扩大目录或上传文件。",
+        "确认该说明是否与声明的 Skill 用途相符；不据此断言恶意意图。"
+      ],
+      "review_required": true,
+      "rule_id": "SG008",
+      "severity": "medium",
+      "snippet": null,
+      "target": null
+    },
+    {
+      "category": "network",
+      "confidence": "medium",
+      "context": "code",
+      "evidence": "命令位置匹配网络请求；单个字面量目标，仅记录主机名",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 1,
+      "path": "fetch.ps1",
+      "review": [
+        "确认目标、请求参数和下载内容用途。",
+        "变量、别名与重定向是否改变真实目标？"
+      ],
+      "review_required": true,
+      "rule_id": "SG002",
+      "severity": "medium",
+      "snippet": null,
+      "target": {
+        "host": "example.invalid",
+        "status": "literal"
+      }
+    },
+    {
+      "category": "execution",
+      "confidence": "medium",
+      "context": "code",
+      "evidence": "命令位置出现解释器/进程启动；未见简单动态参数线索；不证明可利用注入",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 1,
+      "path": "fetch.ps1",
+      "review": [
+        "参数来自固定值、用户输入还是网络？",
+        "是否必须使用解释器，能否限制参数与权限？单条命中不证明命令注入。"
+      ],
+      "review_required": true,
+      "rule_id": "SG003",
+      "severity": "medium",
+      "snippet": null,
+      "target": null
+    },
+    {
+      "category": "download_execute",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "同一行的下载命令通过管道直接连接解释器",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 1,
+      "path": "fetch.ps1",
+      "review": [
+        "下载内容是否经过独立验证与固定版本校验？",
+        "能否改为下载、审查、确认后再运行？这只是局部语法关联。"
+      ],
+      "review_required": true,
+      "rule_id": "SG006",
+      "severity": "high",
+      "snippet": null,
+      "target": null
+    },
+    {
+      "category": "network",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 调用匹配常见网络 API；URL 为字面量，仅记录主机名，不推断请求发生",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 4,
+      "path": "risk.py",
+      "review": [
+        "目标归谁管理，是否允许重定向？",
+        "实际发送哪些字段，是否必要且获授权？"
+      ],
+      "review_required": true,
+      "rule_id": "SG001",
+      "severity": "medium",
+      "snippet": null,
+      "target": {
+        "host": "example.invalid",
+        "status": "literal"
+      }
+    },
+    {
+      "category": "execution",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 命令调用；参数动态/来源待确认；启用 shell/解释器；不能单独证明命令注入",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 5,
+      "path": "risk.py",
+      "review": [
+        "参数来自固定值、用户输入还是网络？",
+        "是否必须使用解释器，能否限制参数与权限？单条命中不证明命令注入。"
+      ],
+      "review_required": true,
+      "rule_id": "SG003",
+      "severity": "high",
+      "snippet": null,
+      "target": null
+    },
+    {
+      "category": "credential",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 环境变量读取；变量名呈敏感用途线索，但不证明泄露",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 6,
+      "path": "risk.py",
+      "review": [
+        "为何需要读取，该变量是否敏感？",
+        "读取值会传给谁，能否缩小权限与传递范围？"
+      ],
+      "review_required": true,
+      "rule_id": "SG004",
+      "severity": "medium",
+      "snippet": null,
+      "target": null
+    },
+    {
+      "category": "credential",
+      "confidence": "high",
+      "context": "code",
+      "evidence": "AST 读取调用直接关联常见凭据路径/默认 dotenv 文件；只检查源代码，不读取被引用路径",
+      "exception": {
+        "matches": [],
+        "status": "none"
+      },
+      "line": 7,
+      "path": "risk.py",
+      "review": [
+        "为何需要读取该凭据文件？",
+        "用途、接收方与最小权限是否已记录？扫描器不会读取所提及的文件。"
+      ],
+      "review_required": true,
+      "rule_id": "SG005",
+      "severity": "medium",
+      "snippet": null,
+      "target": null
+    }
+  ],
+  "root_name": "18_risky_skill",
+  "ruleset_version": "2026.11.08-v1",
+  "runtime": {
+    "elapsed_seconds": 0.012364,
+    "started_at_utc": "2026-11-07T18:39:03.022663+00:00"
+  },
+  "scanner_version": "0.1.0",
+  "schema_version": "1",
+  "summary": {
+    "by_category": {
+      "credential": 2,
+      "download_execute": 1,
+      "execution": 2,
+      "instruction": 1,
+      "network": 2
+    },
+    "by_rule": {
+      "SG001": 1,
+      "SG002": 1,
+      "SG003": 2,
+      "SG004": 1,
+      "SG005": 1,
+      "SG006": 1,
+      "SG008": 1
+    },
+    "bytes_read": 422,
+    "complete": true,
+    "conclusion": "需人工复核",
+    "covered_types": [
+      ".md",
+      ".ps1",
+      ".py"
+    ],
+    "directories_skipped": 0,
+    "excepted_findings": 0,
+    "files_partial": 0,
+    "files_scanned": 3,
+    "files_skipped": 0,
+    "finding_count": 8,
+    "other_entries_skipped": 0,
+    "review_findings": 8,
+    "uncovered": []
+  }
+}

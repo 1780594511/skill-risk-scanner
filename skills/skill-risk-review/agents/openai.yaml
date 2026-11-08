@@ -1,0 +1,3 @@
+interface:
+  display_name: "Skill Risk Review"
+  short_description: "Triage local Skills offline using redacted static reports"

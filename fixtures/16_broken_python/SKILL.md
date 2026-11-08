@@ -1,0 +1,1 @@
+# Partial source file example
