@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+work/
+reports/local/
+/reports/
+*.egg-info/
+.env
+.env.*
+*.pem
+*.key
+/node_modules/
+# This exact fixture contains only an obvious synthetic value.
+!fixtures/21_resource_limits/.env
